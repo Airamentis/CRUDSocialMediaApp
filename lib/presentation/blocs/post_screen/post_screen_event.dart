@@ -5,6 +5,10 @@ abstract class PostScreenEvent {
   const PostScreenEvent();
 }
 
+class Started extends PostScreenEvent {
+  List<Object> get props => [];
+}
+
 class PostCardPressed extends PostScreenEvent {
   List<Object> get props => [];
 }
