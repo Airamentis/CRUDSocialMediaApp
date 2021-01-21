@@ -1,4 +1,4 @@
-import 'package:TestSocialMediaApp/presentation/screens/post_screen.dart';
+import 'package:TestSocialMediaApp/presentation/screens/post_screen/post_screen_main.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
