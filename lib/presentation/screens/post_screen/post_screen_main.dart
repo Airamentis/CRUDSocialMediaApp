@@ -13,15 +13,6 @@ class PostScreen extends StatefulWidget {
 }
 
 class _PostScreenState extends State<PostScreen> {
-  // ignore: close_sinks
-  PostScreenBloc postScreenBloc;
-  @override
-  void initState() {
-    // postScreenBloc = PostScreenBloc();
-
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -41,10 +32,12 @@ class _PostScreenState extends State<PostScreen> {
                 ),
               ),
             ),
-            body: buildPosts(),
+            body: buildPosts(context),
             floatingActionButton: RaisedButton(
               padding: const EdgeInsets.all(20),
-              onPressed: () {},
+              onPressed: () {
+                getIt<PostScreenBloc>()..add(CreatePostPressed());
+              },
               child: Icon(Icons.add),
               shape: CircleBorder(),
             ),

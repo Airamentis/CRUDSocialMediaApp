@@ -10,6 +10,9 @@ class Started extends PostScreenEvent {
 }
 
 class PostCardPressed extends PostScreenEvent {
+  final int postID;
+
+  PostCardPressed({@required this.postID});
   List<Object> get props => [];
 }
 
