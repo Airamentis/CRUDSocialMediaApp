@@ -7,7 +7,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../presentation/blocs/create_post/bloc/create_post_bloc.dart';
+import '../../presentation/blocs/create_post/create_post_bloc.dart';
 import '../template/repo.dart';
 import '../../presentation/blocs/post_screen/post_screen_bloc.dart';
 import '../template/cache.dao.dart';

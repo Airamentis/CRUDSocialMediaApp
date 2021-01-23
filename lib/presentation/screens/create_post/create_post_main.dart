@@ -1,11 +1,13 @@
 import 'package:TestSocialMediaApp/infrastructure/injection/injection.dart';
-import 'package:TestSocialMediaApp/presentation/blocs/create_post/bloc/create_post_bloc.dart';
+import 'package:TestSocialMediaApp/presentation/blocs/create_post/create_post_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'create_post_screen.dart';
+
 class CreatePostMain extends StatelessWidget {
   static const routeName = '/create_post_main';
-  static const title = 'create post main';
+  static const title = 'Create New Post';
 
   @override
   Widget build(BuildContext context) {
@@ -13,16 +15,11 @@ class CreatePostMain extends StatelessWidget {
       create: (context) => getIt<CreatePostBloc>()..add(Started()),
       child: BlocBuilder<CreatePostBloc, CreatePostState>(
         builder: (context, state) {
-          return Scaffold(
-            appBar: AppBar(
-              title: Text(title),
-            ),
-            body: Center(
-              child: Text(
-                'this is the create post main.',
-              ),
-            ),
-          );
+          print(state);
+          if (state is CreatePostInitial) {
+            return CreatePostScreen(title: title);
+          }
+          return CreatePostScreen(title: title);
         },
       ),
     );

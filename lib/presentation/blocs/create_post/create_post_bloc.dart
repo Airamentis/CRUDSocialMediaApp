@@ -15,6 +15,9 @@ class CreatePostBloc extends Bloc<CreatePostEvent, CreatePostState> {
   Stream<CreatePostState> mapEventToState(
     CreatePostEvent event,
   ) async* {
-    // TODO: implement mapEventToState
+    if (event is PostCreated) {
+      print(event.title);
+      print(event.body);
+    }
   }
 }
