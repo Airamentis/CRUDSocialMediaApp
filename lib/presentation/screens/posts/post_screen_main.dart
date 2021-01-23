@@ -1,6 +1,6 @@
 import 'package:TestSocialMediaApp/infrastructure/injection/injection.dart';
 import 'package:TestSocialMediaApp/presentation/blocs/post_screen/post_screen_bloc.dart';
-import 'package:TestSocialMediaApp/presentation/screens/post_screen/posts.dart';
+import 'package:TestSocialMediaApp/presentation/screens/posts/posts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
