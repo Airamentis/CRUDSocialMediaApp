@@ -18,13 +18,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'TESTSOCIALMEDIAAPP',
       theme: ThemeData(),
-      home: PostScreen(),
+      home: PostScreenMain(),
       routes: {},
       onGenerateRoute: (settings) {
-        return MaterialPageRoute(builder: (ctx) => PostScreen());
+        return MaterialPageRoute(builder: (ctx) => PostScreenMain());
       },
       onUnknownRoute: (settings) {
-        return MaterialPageRoute(builder: (ctx) => PostScreen());
+        return MaterialPageRoute(builder: (ctx) => PostScreenMain());
       },
     );
   }
