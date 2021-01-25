@@ -22,12 +22,14 @@ class PostScreenBloc extends Bloc<PostScreenEvent, PostScreenState> {
       await _templateRepo.save('morgan');
       await _templateRepo.delete(true);
       await _templateRepo.getAll();
-    }
-    if (event is PostCardPressed) {
+      yield PostScreenInitial();
+    } else if (event is PostCardPressed) {
       print(event.postID);
-    }
-    if (event is CreatePostPressed) {
-      print('Creating post in progress');
+    } else if (event is CreatePostPressed) {
+      print(state);
+      yield CreatePostInital();
+    } else if (event is CreatePostClosed) {
+      yield PostScreenInitial();
     }
   }
 }
