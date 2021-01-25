@@ -2,10 +2,16 @@ import 'package:flutter/material.dart';
 
 class PostDisplayCard extends StatelessWidget {
   final Function onTap;
+  final String title;
+  final int id;
+  final int userID;
 
   const PostDisplayCard({
     Key key,
     @required this.onTap,
+    @required this.title,
+    @required this.id,
+    @required this.userID,
   }) : super(key: key);
 
   @override
@@ -18,9 +24,7 @@ class PostDisplayCard extends StatelessWidget {
           color: Colors.white,
           width: MediaQuery.of(context).size.width * .75,
           height: MediaQuery.of(context).size.height * .20,
-          child: Center(
-            child: Text('Post Title'),
-          ),
+          child: Center(child: Text(title)),
         ),
       ),
     );

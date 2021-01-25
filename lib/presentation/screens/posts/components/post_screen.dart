@@ -1,13 +1,17 @@
-import 'package:TestSocialMediaApp/presentation/blocs/post_screen/post_screen_bloc.dart';
-import 'package:TestSocialMediaApp/presentation/screens/posts/post_screen_main.dart';
+import 'package:TestSocialMediaApp/domain/classes/posts/posts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:TestSocialMediaApp/presentation/blocs/post_screen/post_screen_bloc.dart';
+import 'package:TestSocialMediaApp/presentation/screens/posts/post_screen_main.dart';
 
 import 'posts.dart';
 
 class PostScreen extends StatelessWidget {
+  final List<Post> postData;
   const PostScreen({
     Key key,
+    @required this.postData,
   }) : super(key: key);
 
   @override
@@ -25,7 +29,7 @@ class PostScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: buildPosts(context),
+      body: buildPosts(context: context, postData: postData),
       floatingActionButton: RaisedButton(
         padding: const EdgeInsets.all(20),
         onPressed: () {

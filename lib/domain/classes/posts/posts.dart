@@ -1,27 +1,25 @@
 import 'dart:convert';
 
-import 'package:flutter/cupertino.dart';
-
 class Post {
-  final String userId;
-  final String id;
+  final int userID;
+  final int id;
   final String title;
   final String body;
   Post({
-    @required this.userId,
-    @required this.id,
-    @required this.title,
-    @required this.body,
+    this.userID,
+    this.id,
+    this.title,
+    this.body,
   });
 
   Post copyWith({
-    String userId,
-    String id,
+    int userId,
+    int id,
     String title,
     String body,
   }) {
     return Post(
-      userId: userId ?? this.userId,
+      userID: userId ?? this.userID,
       id: id ?? this.id,
       title: title ?? this.title,
       body: body ?? this.body,
@@ -30,7 +28,7 @@ class Post {
 
   Map<String, dynamic> toMap() {
     return {
-      'userId': userId,
+      'userId': userID,
       'id': id,
       'title': title,
       'body': body,
@@ -41,7 +39,7 @@ class Post {
     if (map == null) return null;
 
     return Post(
-      userId: map['userId'],
+      userID: map['userId'],
       id: map['id'],
       title: map['title'],
       body: map['body'],
@@ -54,18 +52,18 @@ class Post {
 
   @override
   String toString() {
-    return 'Post(userId: $userId, id: $id, title: $title, body: $body)';
+    return 'Post(userId: $userID, id: $id, title: $title, body: $body)';
   }
 
   @override
   bool operator ==(Object o) {
     if (identical(this, o)) return true;
 
-    return o is Post && o.userId == userId && o.id == id && o.title == title && o.body == body;
+    return o is Post && o.userID == userID && o.id == id && o.title == title && o.body == body;
   }
 
   @override
   int get hashCode {
-    return userId.hashCode ^ id.hashCode ^ title.hashCode ^ body.hashCode;
+    return userID.hashCode ^ id.hashCode ^ title.hashCode ^ body.hashCode;
   }
 }
