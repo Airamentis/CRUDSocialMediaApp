@@ -4,10 +4,8 @@ class ViewPostCard extends StatelessWidget {
   final String userId;
   final String id;
   final String postTitle;
-  final String postBody;
 
   ViewPostCard({
-    @required this.postBody,
     @required this.userId,
     @required this.id,
     @required this.postTitle,
@@ -19,7 +17,7 @@ class ViewPostCard extends StatelessWidget {
       color: Colors.white,
       width: MediaQuery.of(context).size.width * .75,
       height: MediaQuery.of(context).size.height * .85,
-      child: Text(postBody),
+      child: Text(postTitle),
     );
   }
 }

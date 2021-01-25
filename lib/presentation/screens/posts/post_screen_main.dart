@@ -2,6 +2,7 @@ import 'package:TestSocialMediaApp/infrastructure/injection/injection.dart';
 import 'package:TestSocialMediaApp/presentation/blocs/post_screen/post_screen_bloc.dart';
 import 'package:TestSocialMediaApp/presentation/screens/create_post/create_post_main.dart';
 import 'package:TestSocialMediaApp/presentation/screens/posts/components/post_screen.dart';
+import 'package:TestSocialMediaApp/presentation/screens/selected_post/selected_post_main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -24,6 +25,8 @@ class _PostScreenMainState extends State<PostScreenMain> {
 
           if (state is CreatePostInital) {
             return CreatePostMain();
+          } else if (state is ViewPostInitial) {
+            return SelectedPostMain();
           } else if (state is PostScreenInitial) {
             return PostScreen(
               postData: state.posts,

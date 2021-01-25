@@ -31,7 +31,7 @@ GetIt $initGetIt(
       instanceName: 'TemplateSource');
   gh.factory<PostScreenBloc>(
       () => PostScreenBloc(get<ITemplateRepo>(instanceName: 'TemplateEntity')));
-  gh.factory<PostsBloc>(() => PostsBloc());
+  gh.factory<SelectedPostBloc>(() => SelectedPostBloc());
 
   // Eager singletons must be registered in the right order
   gh.singleton<ITemplateRepo>(

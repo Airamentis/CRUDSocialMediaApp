@@ -62,10 +62,16 @@ class PostScreenBloc extends Bloc<PostScreenEvent, PostScreenState> {
       );
     } else if (event is PostCardPressed) {
       print(event.postID);
+      yield ViewPostInitial();
     } else if (event is CreatePostPressed) {
       print(state);
       yield CreatePostInital();
     } else if (event is CreatePostClosed) {
+      yield PostScreenInitial(
+        //TODO change once connected
+        posts: examplePosts,
+      );
+    } else if (event is ViewPostClosed) {
       yield PostScreenInitial(
         //TODO change once connected
         posts: examplePosts,

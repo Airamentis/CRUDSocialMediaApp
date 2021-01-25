@@ -16,12 +16,12 @@ List examplePosts = [
 ];
 
 @injectable
-class PostsBloc extends Bloc<PostsEvent, PostsState> {
-  PostsBloc() : super(PostsInitial());
+class SelectedPostBloc extends Bloc<SelectedPostEvent, SelectedState> {
+  SelectedPostBloc() : super(PostsInitial());
 
   @override
-  Stream<PostsState> mapEventToState(
-    PostsEvent event,
+  Stream<SelectedState> mapEventToState(
+    SelectedPostEvent event,
   ) async* {
     // TODO: implement mapEventToState
   }

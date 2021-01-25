@@ -23,3 +23,7 @@ class CreatePostPressed extends PostScreenEvent {
 class CreatePostClosed extends PostScreenEvent {
   List<Object> get props => [];
 }
+
+class ViewPostClosed extends PostScreenEvent {
+  List<Object> get props => [];
+}

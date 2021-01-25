@@ -1,8 +1,8 @@
 import 'package:TestSocialMediaApp/domain/classes/posts/posts.dart';
-import 'package:TestSocialMediaApp/infrastructure/injection/injection.dart';
 import 'package:TestSocialMediaApp/presentation/blocs/post_screen/post_screen_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:TestSocialMediaApp/presentation/widgets/post_display_widget.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 Widget buildPosts({
   BuildContext context,
@@ -18,7 +18,7 @@ Widget buildPosts({
         userID: postData[index].userID,
         title: postData[index].title,
         onTap: () {
-          getIt<PostScreenBloc>()
+          context.read<PostScreenBloc>()
             ..add(
               PostCardPressed(
                 postID: postData[index].id,
