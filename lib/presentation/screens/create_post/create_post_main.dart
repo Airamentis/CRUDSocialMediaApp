@@ -9,6 +9,10 @@ class CreatePostMain extends StatelessWidget {
   static const routeName = '/create_post_main';
   static const title = 'Create New Post';
 
+  final int listLenght;
+
+  const CreatePostMain({Key key, @required this.listLenght}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -17,9 +21,15 @@ class CreatePostMain extends StatelessWidget {
         builder: (context, state) {
           print(state);
           if (state is CreatePostInitial) {
-            return CreatePostScreen(title: title);
+            return CreatePostScreen(
+              title: title,
+              listLength: listLenght,
+            );
           }
-          return CreatePostScreen(title: title);
+          return CreatePostScreen(
+            title: title,
+            listLength: listLenght,
+          );
         },
       ),
     );

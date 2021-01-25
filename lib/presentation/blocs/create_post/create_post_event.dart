@@ -8,9 +8,8 @@ class Started extends CreatePostEvent {
 }
 
 class PostCreated extends CreatePostEvent {
-  final String title;
-  final String body;
+  final Post createdPost;
 
-  PostCreated({@required this.title, @required this.body});
+  PostCreated({@required this.createdPost});
   List<Object> get props => [];
 }

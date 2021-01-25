@@ -1,3 +1,4 @@
+import 'package:TestSocialMediaApp/domain/classes/posts/posts.dart';
 import 'package:TestSocialMediaApp/presentation/blocs/create_post/create_post_bloc.dart';
 import 'package:TestSocialMediaApp/presentation/blocs/post_screen/post_screen_bloc.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +9,7 @@ Widget buildCreatePost({
   @required GlobalKey<FormState> formKey,
   @required TextEditingController titleController,
   @required TextEditingController bodyController,
+  @required int listLenght,
 }) {
   return Center(
     child: Container(
@@ -74,13 +76,28 @@ Widget buildCreatePost({
                       context.read<CreatePostBloc>()
                         ..add(
                           PostCreated(
-                            title: titleController.text,
-                            body: bodyController.text,
+                            createdPost: Post(
+                              userID: 2,
+                              id: listLenght + 1,
+                              title: titleController.text,
+                              body: bodyController.text,
+                            ),
                           ),
                         );
                       context.read<PostScreenBloc>()
                         ..add(
                           CreatePostClosed(),
+                        );
+                      context.read<PostScreenBloc>()
+                        ..add(
+                          NewPostCreated(
+                            newPost: Post(
+                              userID: 2,
+                              id: listLenght + 1,
+                              title: titleController.text,
+                              body: bodyController.text,
+                            ),
+                          ),
                         );
                     }
                   },

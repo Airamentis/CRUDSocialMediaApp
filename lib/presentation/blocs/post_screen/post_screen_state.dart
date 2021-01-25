@@ -16,4 +16,8 @@ class ViewPostInitial extends PostScreenState {
   });
 }
 
-class CreatePostInital extends PostScreenState {}
+class CreatePostInital extends PostScreenState {
+  final listLenght;
+
+  CreatePostInital({@required this.listLenght});
+}

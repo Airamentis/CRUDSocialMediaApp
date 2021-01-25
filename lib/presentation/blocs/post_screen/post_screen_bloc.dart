@@ -67,7 +67,7 @@ class PostScreenBloc extends Bloc<PostScreenEvent, PostScreenState> {
       );
     } else if (event is CreatePostPressed) {
       print(state);
-      yield CreatePostInital();
+      yield CreatePostInital(listLenght: DUMMYPosts.length);
     } else if (event is CreatePostClosed) {
       yield PostScreenInitial(
         //TODO change once connected
@@ -78,6 +78,8 @@ class PostScreenBloc extends Bloc<PostScreenEvent, PostScreenState> {
         //TODO change once connected
         posts: DUMMYPosts,
       );
+    } else if (event is NewPostCreated) {
+      DUMMYPosts.add(event.newPost);
     }
   }
 }

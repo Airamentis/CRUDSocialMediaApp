@@ -1,15 +1,17 @@
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
+
 class Post {
   final int userID;
   final int id;
   final String title;
   final String body;
   Post({
-    this.userID,
-    this.id,
-    this.title,
-    this.body,
+    @required this.userID,
+    @required this.id,
+    @required this.title,
+    @required this.body,
   });
 
   Post copyWith({

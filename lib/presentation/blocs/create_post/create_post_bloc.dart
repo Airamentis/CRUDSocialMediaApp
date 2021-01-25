@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:TestSocialMediaApp/domain/classes/posts/posts.dart';
 import 'package:bloc/bloc.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
@@ -16,8 +17,7 @@ class CreatePostBloc extends Bloc<CreatePostEvent, CreatePostState> {
     CreatePostEvent event,
   ) async* {
     if (event is PostCreated) {
-      print(event.title);
-      print(event.body);
+      print(event.createdPost);
     }
   }
 }

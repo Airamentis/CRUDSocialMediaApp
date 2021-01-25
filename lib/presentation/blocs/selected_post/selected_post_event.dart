@@ -14,3 +14,11 @@ class PostSelected extends SelectedPostEvent {
   });
   List<Object> get props => [];
 }
+
+class PostDeleted extends SelectedPostEvent {
+  final int postID;
+  PostDeleted({
+    @required this.postID,
+  });
+  List<Object> get props => [];
+}

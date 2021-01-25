@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:TestSocialMediaApp/domain/classes/posts/posts.dart';
 import 'package:bloc/bloc.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
@@ -18,6 +17,8 @@ class SelectedPostBloc extends Bloc<SelectedPostEvent, SelectedState> {
   ) async* {
     if (event is PostSelected) {
       yield SelectedPostInProgress();
+    } else if (event is PostDeleted) {
+      print('deleted post ${event.postID}!');
     }
   }
 }

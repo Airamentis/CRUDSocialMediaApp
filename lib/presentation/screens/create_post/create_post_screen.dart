@@ -1,6 +1,7 @@
-import 'package:TestSocialMediaApp/presentation/blocs/post_screen/post_screen_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:TestSocialMediaApp/presentation/blocs/post_screen/post_screen_bloc.dart';
 
 import 'components/create_post.dart';
 
@@ -8,9 +9,11 @@ class CreatePostScreen extends StatefulWidget {
   const CreatePostScreen({
     Key key,
     @required this.title,
+    @required this.listLength,
   }) : super(key: key);
 
   final String title;
+  final int listLength;
 
   @override
   _CreatePostScreenState createState() => _CreatePostScreenState();
@@ -61,6 +64,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
         ),
       ),
       body: buildCreatePost(
+        listLenght: widget.listLength,
         context: context,
         bodyController: bodyController,
         formKey: formKey,

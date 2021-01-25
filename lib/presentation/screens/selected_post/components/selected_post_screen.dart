@@ -1,5 +1,6 @@
 import 'package:TestSocialMediaApp/domain/classes/posts/posts.dart';
 import 'package:TestSocialMediaApp/presentation/blocs/post_screen/post_screen_bloc.dart';
+import 'package:TestSocialMediaApp/presentation/blocs/selected_post/selected_post_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -24,7 +25,13 @@ class SelectedPostScreen extends StatelessWidget {
             size: 35,
           ),
         ),
-        onPressed: () {},
+        onPressed: () {
+          context.read<SelectedPostBloc>()
+            ..add(
+              PostDeleted(postID: post.id),
+            );
+          context.read<PostScreenBloc>()..add(ViewPostClosed());
+        },
         color: Colors.white,
       ),
       backgroundColor: Colors.blueGrey[200],

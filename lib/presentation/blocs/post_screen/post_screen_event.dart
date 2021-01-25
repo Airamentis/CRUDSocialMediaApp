@@ -27,3 +27,10 @@ class CreatePostClosed extends PostScreenEvent {
 class ViewPostClosed extends PostScreenEvent {
   List<Object> get props => [];
 }
+
+class NewPostCreated extends PostScreenEvent {
+  final Post newPost;
+
+  NewPostCreated({@required this.newPost});
+  List<Object> get props => [];
+}
