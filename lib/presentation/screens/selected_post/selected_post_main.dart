@@ -1,4 +1,4 @@
-import 'package:TestSocialMediaApp/domain/classes/posts/posts.dart';
+import 'package:TestSocialMediaApp/domain/classes/posts/post_model.dart';
 import 'package:TestSocialMediaApp/infrastructure/injection/injection.dart';
 import 'package:TestSocialMediaApp/presentation/blocs/selected_post/selected_post_bloc.dart';
 import 'package:flutter/material.dart';

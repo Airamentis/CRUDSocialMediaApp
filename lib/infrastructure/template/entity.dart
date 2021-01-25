@@ -1,3 +1,4 @@
+import 'package:TestSocialMediaApp/domain/classes/posts/post_model.dart';
 import 'package:TestSocialMediaApp/infrastructure/template/repo.dart';
 import 'package:TestSocialMediaApp/infrastructure/template/source.dao.dart';
 import 'package:injectable/injectable.dart';
@@ -24,7 +25,7 @@ class TemplateEntity implements ITemplateRepo {
   @override
   Future<void> delete(bool force) => _cache.delete(force);
   @override
-  Future<void> getAll() => _cache.getAll();
+  Future<List<Post>> getAll() => _source.getAll();
   @override
   Future<void> save(String key) => _cache.save(key);
 }

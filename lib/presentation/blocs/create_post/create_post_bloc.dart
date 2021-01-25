@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:TestSocialMediaApp/domain/classes/posts/posts.dart';
+import 'package:TestSocialMediaApp/domain/classes/posts/post_model.dart';
 import 'package:bloc/bloc.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';

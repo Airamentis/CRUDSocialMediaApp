@@ -1,3 +1,4 @@
+import 'package:TestSocialMediaApp/domain/classes/posts/post_model.dart';
 import 'package:TestSocialMediaApp/infrastructure/template/repo.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
@@ -22,7 +23,7 @@ class TemplateCache implements ITemplateRepo {
   }
 
   @override
-  Future<void> getAll() {
+  Future<List<Post>> getAll() {
     print('this is inside of cache!!! called getAll');
   }
 

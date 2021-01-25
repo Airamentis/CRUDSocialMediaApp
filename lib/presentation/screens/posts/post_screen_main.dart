@@ -31,7 +31,7 @@ class _PostScreenMainState extends State<PostScreenMain> {
             return SelectedPostMain(
               selectedPost: state.selectedPost,
             );
-          } else if (state is PostScreenInitial) {
+          } else if (state is PostScreenLoaded) {
             return PostScreen(
               postData: state.posts,
             );

@@ -1,4 +1,8 @@
+import 'dart:convert';
+
+import 'package:TestSocialMediaApp/domain/classes/posts/post_model.dart';
 import 'package:TestSocialMediaApp/infrastructure/template/repo.dart';
+import 'package:http/http.dart' as http;
 import 'package:injectable/injectable.dart';
 
 @named
@@ -16,9 +20,21 @@ class TemplateSource implements ITemplateRepo {
   }
 
   @override
-  Future<void> getAll() {
-    // TODO: implement getAll
-    throw UnimplementedError();
+  Future<List<Post>> getAll() async {
+    final res = await http.get('http://jsonplaceholder.typicode.com/posts');
+
+    if (res.statusCode == 200) {
+      List<dynamic> body = jsonDecode(res.body);
+
+      List<Post> posts = [];
+      body.forEach((item) {
+        final post = Post.fromMap(Map<String, dynamic>.from(item));
+        posts.add(post);
+      });
+      return posts;
+    } else {
+      throw "Can't get posts.";
+    }
   }
 
   @override

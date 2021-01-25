@@ -1,4 +1,4 @@
-import 'package:TestSocialMediaApp/domain/classes/posts/posts.dart';
+import 'package:TestSocialMediaApp/domain/classes/posts/post_model.dart';
 import 'package:TestSocialMediaApp/presentation/blocs/post_screen/post_screen_bloc.dart';
 import 'package:TestSocialMediaApp/presentation/blocs/selected_post/selected_post_bloc.dart';
 import 'package:flutter/material.dart';
@@ -26,11 +26,10 @@ class SelectedPostScreen extends StatelessWidget {
           ),
         ),
         onPressed: () {
-          context.read<SelectedPostBloc>()
-            ..add(
-              PostDeleted(postID: post.id),
-            );
-          context.read<PostScreenBloc>()..add(SelectedPostDeleted(postID: post.id));
+          context.read<SelectedPostBloc>().add(
+                PostDeleted(postID: post.id),
+              );
+          context.read<PostScreenBloc>().add(SelectedPostDeleted(postID: post.id));
         },
         color: Colors.white,
       ),
