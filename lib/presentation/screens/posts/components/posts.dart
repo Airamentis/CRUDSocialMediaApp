@@ -12,7 +12,9 @@ Widget buildPosts(BuildContext context) {
         onTap: () {
           getIt<PostScreenBloc>()
             ..add(
-              PostCardPressed(postID: index + 1),
+              PostCardPressed(
+                postID: index + 1,
+              ),
             );
         },
       );

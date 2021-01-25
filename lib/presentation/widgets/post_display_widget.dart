@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 class PostDisplayCard extends StatelessWidget {
   final Function onTap;
 
-  const PostDisplayCard({Key key, @required this.onTap}) : super(key: key);
+  const PostDisplayCard({
+    Key key,
+    @required this.onTap,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
