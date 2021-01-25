@@ -9,6 +9,11 @@ class PostScreenInitial extends PostScreenState {
   PostScreenInitial({@required this.posts});
 }
 
-class ViewPostInitial extends PostScreenState {}
+class ViewPostInitial extends PostScreenState {
+  final Post selectedPost;
+  ViewPostInitial({
+    @required this.selectedPost,
+  });
+}
 
 class CreatePostInital extends PostScreenState {}

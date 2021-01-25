@@ -10,7 +10,7 @@ import 'package:injectable/injectable.dart';
 import '../../presentation/blocs/create_post/create_post_bloc.dart';
 import '../template/repo.dart';
 import '../../presentation/blocs/post_screen/post_screen_bloc.dart';
-import '../../presentation/blocs/posts/posts_bloc.dart';
+import '../../presentation/blocs/selected_post/selected_post_bloc.dart';
 import '../template/cache.dao.dart';
 import '../template/entity.dart';
 import '../template/source.dao.dart';

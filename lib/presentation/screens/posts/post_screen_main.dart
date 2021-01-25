@@ -26,7 +26,9 @@ class _PostScreenMainState extends State<PostScreenMain> {
           if (state is CreatePostInital) {
             return CreatePostMain();
           } else if (state is ViewPostInitial) {
-            return SelectedPostMain();
+            return SelectedPostMain(
+              selectedPost: state.selectedPost,
+            );
           } else if (state is PostScreenInitial) {
             return PostScreen(
               postData: state.posts,

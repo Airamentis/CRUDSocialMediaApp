@@ -1,3 +1,4 @@
+import 'package:TestSocialMediaApp/domain/classes/posts/posts.dart';
 import 'package:TestSocialMediaApp/presentation/blocs/post_screen/post_screen_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -5,10 +6,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class SelectedPostScreen extends StatelessWidget {
   const SelectedPostScreen({
     Key key,
-    @required this.title,
+    @required this.post,
   }) : super(key: key);
 
-  final String title;
+  final Post post;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,7 @@ class SelectedPostScreen extends StatelessWidget {
         leading: SizedBox(),
         title: Center(
           child: Text(
-            title,
+            post.title,
             style: TextStyle(
               color: Colors.black,
             ),
@@ -59,7 +60,7 @@ class SelectedPostScreen extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(10),
             child: Text(
-              'Post Body.',
+              post.body,
               textAlign: TextAlign.center,
             ),
           ),

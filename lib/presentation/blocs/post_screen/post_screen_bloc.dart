@@ -10,7 +10,7 @@ import 'package:meta/meta.dart';
 part 'post_screen_event.dart';
 part 'post_screen_state.dart';
 
-List<Post> examplePosts = [
+List<Post> DUMMYPosts = [
   Post(
     userID: 1,
     id: 1,
@@ -44,7 +44,7 @@ class PostScreenBloc extends Bloc<PostScreenEvent, PostScreenState> {
       : super(
           PostScreenInitial(
             //TODO change once connected
-            posts: examplePosts,
+            posts: DUMMYPosts,
           ),
         );
 
@@ -58,23 +58,25 @@ class PostScreenBloc extends Bloc<PostScreenEvent, PostScreenState> {
       await _templateRepo.getAll();
       yield PostScreenInitial(
         //TODO change once connected
-        posts: examplePosts,
+        posts: DUMMYPosts,
       );
     } else if (event is PostCardPressed) {
       print(event.postID);
-      yield ViewPostInitial();
+      yield ViewPostInitial(
+        selectedPost: DUMMYPosts[event.postID - 1],
+      );
     } else if (event is CreatePostPressed) {
       print(state);
       yield CreatePostInital();
     } else if (event is CreatePostClosed) {
       yield PostScreenInitial(
         //TODO change once connected
-        posts: examplePosts,
+        posts: DUMMYPosts,
       );
     } else if (event is ViewPostClosed) {
       yield PostScreenInitial(
         //TODO change once connected
-        posts: examplePosts,
+        posts: DUMMYPosts,
       );
     }
   }

@@ -24,7 +24,9 @@ class PostDisplayCard extends StatelessWidget {
           color: Colors.white,
           width: MediaQuery.of(context).size.width * .75,
           height: MediaQuery.of(context).size.height * .20,
-          child: Center(child: Text(title)),
+          child: Center(
+            child: Text(title),
+          ),
         ),
       ),
     );
