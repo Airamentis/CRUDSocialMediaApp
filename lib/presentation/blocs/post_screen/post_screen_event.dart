@@ -28,6 +28,14 @@ class ViewPostClosed extends PostScreenEvent {
   List<Object> get props => [];
 }
 
+class SelectedPostDeleted extends PostScreenEvent {
+  final int postID;
+  SelectedPostDeleted({
+    @required this.postID,
+  });
+  List<Object> get props => [];
+}
+
 class NewPostCreated extends PostScreenEvent {
   final Post newPost;
 

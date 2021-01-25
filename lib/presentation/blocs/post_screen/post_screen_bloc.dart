@@ -62,8 +62,9 @@ class PostScreenBloc extends Bloc<PostScreenEvent, PostScreenState> {
       );
     } else if (event is PostCardPressed) {
       print(event.postID);
+      int selectedPostIndex = DUMMYPosts.indexWhere((post) => post.id == event.postID);
       yield ViewPostInitial(
-        selectedPost: DUMMYPosts[event.postID - 1],
+        selectedPost: DUMMYPosts[selectedPostIndex],
       );
     } else if (event is CreatePostPressed) {
       print(state);
@@ -80,6 +81,13 @@ class PostScreenBloc extends Bloc<PostScreenEvent, PostScreenState> {
       );
     } else if (event is NewPostCreated) {
       DUMMYPosts.add(event.newPost);
+    } else if (event is SelectedPostDeleted) {
+      print(event.postID);
+      DUMMYPosts.removeWhere((post) {
+        return post.id == event.postID;
+      });
+      print(DUMMYPosts.length);
+      yield PostScreenInitial(posts: DUMMYPosts);
     }
   }
 }

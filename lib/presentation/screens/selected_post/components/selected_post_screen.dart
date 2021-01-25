@@ -30,7 +30,7 @@ class SelectedPostScreen extends StatelessWidget {
             ..add(
               PostDeleted(postID: post.id),
             );
-          context.read<PostScreenBloc>()..add(ViewPostClosed());
+          context.read<PostScreenBloc>()..add(SelectedPostDeleted(postID: post.id));
         },
         color: Colors.white,
       ),
