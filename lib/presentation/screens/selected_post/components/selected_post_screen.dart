@@ -53,7 +53,6 @@ class SelectedPostScreen extends StatelessWidget {
             ),
             onPressed: () {
               context.read<PostScreenBloc>()..add(ViewPostClosed());
-              print('closed');
             },
           ),
         ],

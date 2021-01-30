@@ -25,7 +25,13 @@ class PostDisplayCard extends StatelessWidget {
           width: MediaQuery.of(context).size.width * .75,
           height: MediaQuery.of(context).size.height * .20,
           child: Center(
-            child: Text(title),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Text(
+                title,
+                textAlign: TextAlign.center,
+              ),
+            ),
           ),
         ),
       ),

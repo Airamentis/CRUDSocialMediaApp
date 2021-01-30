@@ -78,7 +78,7 @@ Widget buildCreatePost({
                           PostCreated(
                             createdPost: Post(
                               userID: 2,
-                              id: listLenght + 1,
+                              id: DateTime.now().microsecond,
                               title: titleController.text,
                               body: bodyController.text,
                             ),
@@ -93,7 +93,7 @@ Widget buildCreatePost({
                           NewPostCreated(
                             newPost: Post(
                               userID: 2,
-                              id: listLenght + 1,
+                              id: DateTime.now().microsecond,
                               title: titleController.text,
                               body: bodyController.text,
                             ),
